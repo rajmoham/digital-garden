@@ -1,0 +1,48 @@
+name: Deploy Digital Garden to GitHub Pages
+ 
+on:
+  schedule:
+    - cron: 0 4 1/7 * * # “At 04:00 on every 7th day-of-month from 1 through 31.”
+ 
+permissions:
+  pages: write
+  id-token: write
+ 
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+ 
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      # first check whether we need to run the job based on times of latest commits from both repos
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for git info
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/checkout@v4
+        with:
+            repository: rajmoham/notes_directory
+            path: './content'
+      - name: Install Dependencies
+        run: npm ci
+      - name: Build Digital Garden
+        run: npx quartz build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+ 
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
