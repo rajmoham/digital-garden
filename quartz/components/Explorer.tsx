@@ -97,8 +97,9 @@ export default ((userOpts?: Partial<Options>) => {
             <line x1="4" x2="20" y1="18" y2="18" />
           </svg>
         </button>
-          <h2>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
+          <h2 class='desktop-only'>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
         <div id={id} class="explorer-content" aria-expanded={false} role="group">
+          <h2 class='mobile-only'>{opts.title ?? i18n(cfg.locale).components.explorer.title}</h2>
           <OverflowList class="explorer-ul" />
         </div>
         <template id="template-file">

@@ -5,6 +5,8 @@ some example code
 
 ```
 
+`some text`
+
 # heading 1
 
 ## heading 2
@@ -16,3 +18,6 @@ some example code
 ##### heading 5
 
 ###### heading 6
+
+
+[google.com](https://www.google.co.uk)

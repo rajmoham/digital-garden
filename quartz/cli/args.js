@@ -13,51 +13,6 @@ export const CommonArgv = {
   },
 }
 
-export const CreateArgv = {
-  ...CommonArgv,
-  source: {
-    string: true,
-    alias: ["s"],
-    describe: "source directory to copy/create symlink from",
-  },
-  strategy: {
-    string: true,
-    alias: ["X"],
-    choices: ["new", "copy", "symlink"],
-    describe: "strategy for content folder setup",
-  },
-  links: {
-    string: true,
-    alias: ["l"],
-    choices: ["absolute", "shortest", "relative"],
-    describe: "strategy to resolve links",
-  },
-}
-
-export const SyncArgv = {
-  ...CommonArgv,
-  commit: {
-    boolean: true,
-    default: true,
-    describe: "create a git commit for your unsaved changes",
-  },
-  message: {
-    string: true,
-    alias: ["m"],
-    describe: "option to override the default Quartz commit message",
-  },
-  push: {
-    boolean: true,
-    default: true,
-    describe: "push updates to your Quartz fork",
-  },
-  pull: {
-    boolean: true,
-    default: true,
-    describe: "pull updates from your Quartz fork",
-  },
-}
-
 export const BuildArgv = {
   ...CommonArgv,
   output: {
@@ -68,12 +23,12 @@ export const BuildArgv = {
   },
   serve: {
     boolean: true,
-    default: false,
+    default: true,
     describe: "run a local server to live-preview your Quartz",
   },
   watch: {
     boolean: true,
-    default: false,
+    default: true,
     describe: "watch for changes and rebuild automatically",
   },
   baseDir: {
@@ -84,7 +39,7 @@ export const BuildArgv = {
   port: {
     number: true,
     default: 8080,
-    describe: "port to serve Quartz on",
+    describe: "port to serve Digital Garden on",
   },
   wsPort: {
     number: true,

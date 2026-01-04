@@ -35,7 +35,6 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ContentMeta(),
     Component.ArticleTitle(),
     Component.TagList(),
   ],
