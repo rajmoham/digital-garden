@@ -1,8 +1,11 @@
 name: Deploy Digital Garden to GitHub Pages
  
 on:
-  schedule:
-    - cron: 0 4 1/7 * * # “At 04:00 on every 7th day-of-month from 1 through 31.”
+  push:
+    branches:
+      - main
+  # schedule:
+  #   - cron: 0 4 1/7 * * # “At 04:00 on every 7th day-of-month from 1 through 31.”
  
 permissions:
   pages: write
