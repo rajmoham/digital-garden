@@ -14,8 +14,8 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <p>
-          {i18n(cfg.locale).components.footer.createdWith}{" "}
-          <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
+          A digital garden by
+          <a href="https://github.com/rajmoham"> Raj M</a> 🍃  © {year}
         </p>
         <ul>
           {Object.entries(links).map(([text, link]) => (
@@ -24,6 +24,9 @@ export default ((opts?: Options) => {
             </li>
           ))}
         </ul>
+        <p style={{ fontSize: '12px'}}>
+        Forked from <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>
+        </p>
       </footer>
     )
   }

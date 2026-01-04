@@ -8,8 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/rajmoham/digital-garden",
     },
   }),
 }
@@ -18,11 +17,14 @@ export const sharedPageComponents: SharedLayout = {
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
-      component: Component.Breadcrumbs(),
+      component: Component.Breadcrumbs({
+          rootName: "~",
+          spacerSymbol: " / "
+      }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
     Component.ContentMeta(),
+    Component.ArticleTitle(),
     Component.TagList(),
   ],
   left: [
@@ -35,15 +37,28 @@ export const defaultContentPageLayout: PageLayout = {
           grow: true,
         },
         { Component: Component.Darkmode() },
-        { Component: Component.ReaderMode() },
+        // { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer(),
+    Component.Explorer({
+        // title: "Explorer",
+        // folderClickBehavior: "link",
+        // mapFn: (node) => {
+        //     if (node.isFolder) {
+        //       node.displayName = "📁 " + node.displayName
+        //     } else {
+        //       node.displayName = "📄 " + node.displayName
+        //     }
+        // },
+    }),
   ],
   right: [
-    Component.Graph(),
+    // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    // Component.Backlinks(),
+    Component.RecentNotes({
+        title: "Recent work"
+    }),
   ],
 }
 

@@ -1,18 +1,9 @@
-# Quartz v4
+# Digital Garden
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Quartz is a popular static website generator which converts markdown files into aesthetic pages to view as a website. 
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+This digital garden is a forked version of Quartz which strips down a lot of the bloated features (which I do not and will never) intend to use.
+It also removes any need to have the repository alongside my notes, and automates the entire sync process to my liking.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
-
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
-
-## Sponsors
-
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+And below is the obligatory quote to inspire learning:
+> "The beautiful thing about learning is that nobody can take it away from you." ~ B.B. King
