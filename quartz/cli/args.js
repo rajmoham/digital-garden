@@ -23,12 +23,12 @@ export const BuildArgv = {
   },
   serve: {
     boolean: true,
-    default: true,
+    default: false,
     describe: "run a local server to live-preview your Quartz",
   },
   watch: {
     boolean: true,
-    default: true,
+    default: false,
     describe: "watch for changes and rebuild automatically",
   },
   baseDir: {
