@@ -31,6 +31,9 @@ jobs:
             repository: rajmoham/notes_directory
             path: content
 
+      - name: Move index.md into contents
+        run: mv index.md content
+
       - name: Install Dependencies
         run: npm ci
 
