@@ -22,3 +22,6 @@ It also removes any need to have the repository alongside my notes, and automate
  
 And below is the obligatory quote to inspire learning:
 > "The beautiful thing about learning is that nobody can take it away from you." ~ B.B. King
+
+### Current Status
+[![Status](https://github.com/rajmoham/digital-garden/actions/workflows/deploy.yml/badge.svg)](https://github.com/rajmoham/digital-garden/actions/workflows/deploy.yml)
