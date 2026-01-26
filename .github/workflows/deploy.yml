@@ -9,6 +9,7 @@ on:
 permissions:
   pages: write
   id-token: write
+  statuses: write
  
 concurrency:
   group: "pages"
@@ -18,6 +19,13 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
+      - name: Set pending status
+        uses: myrotvorets/set-commit-status-action@master
+        with:
+          sha: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: pending
+
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -55,3 +63,11 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Set ending status
+        uses: myrotvorets/set-commit-status-action@master
+        if: always()
+        with:
+          sha: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
